@@ -28,19 +28,24 @@ const mongoose = require("mongoose");
 const User = require("./User");
 
 const createUser = async () => {
-  const user = await User.create({
-    name: "Ayomide",
-    age: 30,
-    email: "ayodasilva12@gmail.com",
-    // address: {
-    //   street: "Oke baale, Uniosun",
-    //   city: "Osogbo",
-    // },
-    // bestFriend: "My friend",
-    // hobbies: ["weight lifing"],
-    // updatedAt: new Date(),
-  });
-  console.log(user);
+  try {
+    // const user = await User.create({
+    //   name: "Thats aint my name",
+    //   age: 30,
+    //   email: "ayodasilva12@gmail.com",
+    //   hobbies: ["weight lifing", "fighting"],
+    //   createdAt: new Date(),
+    //   address: {
+    //     street: "Oke baale, Uniosun",
+    //     city: "Osogbo",
+    //   },
+    //   bestFriend: "6557f10bd73f4b0d2ab2c07b",
+    // });
+    const user = await User.findOneAndUpdate()
+    console.log(user);
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 module.exports = { createUser };
