@@ -1,4 +1,3 @@
-
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 // const uri = "mongodb+srv://heyayomideadebisi:<password>@first-cluster.q1xtx2w.mongodb.net/?retryWrites=true&w=majority";
 
@@ -25,11 +24,23 @@
 // }
 // run().catch(console.dir);
 
+const mongoose = require("mongoose");
+const User = require("./User");
 
-const mongoose = require("mongoose")
+const createUser = async () => {
+  const user = await User.create({
+    name: "Ayomide",
+    age: 30,
+    email: "ayodasilva12@gmail.com",
+    // address: {
+    //   street: "Oke baale, Uniosun",
+    //   city: "Osogbo",
+    // },
+    // bestFriend: "My friend",
+    // hobbies: ["weight lifing"],
+    // updatedAt: new Date(),
+  });
+  console.log(user);
+};
 
-const startDb = async() => {
-    await mongoose.connect("mongodb+srv://heyayomideadebisi:qlqsAtQn7cSetOwW@first-cluster.q1xtx2w.mongodb.net/?retryWrites=true&w=majority")
-}
-
-module.exports = startDb
+module.exports = { createUser };
