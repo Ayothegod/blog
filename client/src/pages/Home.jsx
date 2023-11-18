@@ -1,6 +1,10 @@
-
+import HomePosts from "../components/HomePosts"
 export default function Home() {
   return (
-    <div>Home</div>
+    <div className="home">
+      <HomePosts />
+      <HomePosts />
+      <HomePosts />
+    </div>
   )
 }
