@@ -359,8 +359,10 @@ p {
   border: 2px solid black;
 }
 
+/* CREATE POST */
+
 .createpost {
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
   max-width: 720px;
   margin: 0 auto;
 }
@@ -394,7 +396,7 @@ p {
   padding: 8px;
   border: none;
   border-radius: 4px;
-  margin-right: .25rem;
+  margin-right: .5rem;
 }
 
 .createpost-details .category-button {
@@ -405,7 +407,7 @@ p {
   border-radius: 4px;
   font-weight: 600;
   border: 2px solid black;
-
+  cursor: pointer;
   transition: all 0.2s;
 }
 
@@ -418,6 +420,7 @@ p {
 .create-categories {
   display: flex;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .create-categories .category {
@@ -443,6 +446,24 @@ p {
   resize: none;
   padding: .5rem;
   border-radius: 4px;
+}
+
+.createpost-details .create-button {
+  border: none;
+  padding: 8px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid black;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.createpost-details .create-button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
 }
 
 @media screen and (min-width: 550px) {
