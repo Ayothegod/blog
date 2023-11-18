@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 
 export default function Header() {
-  const user = "Ayomide";
+  const user = "";
 
   return (
     <div className="header">
