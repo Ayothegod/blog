@@ -44,8 +44,14 @@ export default function PostDetail() {
         <div className="post-comments">
             <p>Comments:</p>
 
-            <div>
+            <div className="comments-div">
                 <Comment/>
+                <Comment/>
+            </div>
+
+            <div className="create-comment">
+                <input type="text" className="create-comment-input" placeholder="add a comment" />
+                <button className="create-comment-button">Add Comment</button>
             </div>
         </div>
       </div>
