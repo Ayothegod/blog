@@ -1,0 +1,107 @@
+
+/* CREATE POST */
+
+.createpost {
+    padding: 1rem 0.5rem;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  
+  .createpost-container {
+  
+  }
+  
+  .createpost-container h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 1rem 0;
+  }
+  
+  .createpost-details {
+    padding: 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  
+  .createpost-details .title-input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .createpost-details .category-input {
+    /* width: 100%; */
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-right: .5rem;
+  }
+  
+  .createpost-details .category-button {
+    border: none;
+    padding: 8px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .createpost-details .category-button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+  }
+  
+  .create-categories {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .create-categories .category {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-gray);
+    font-size: 14px;
+    padding: 6px;
+    gap: .2rem;
+    font-weight: 500;
+    border-radius: 14px;
+    margin-bottom: .5rem;
+  }
+  
+  .category-icon {
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .description-input {
+    border: none;
+    max-width: 100%;
+    resize: none;
+    padding: .5rem;
+    border-radius: 4px;
+  }
+  
+  .createpost-details .create-button {
+    border: none;
+    padding: 8px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 2px solid black;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .createpost-details .create-button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+  }

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-
+import "../styles/Auth.css"
 export default function Login() {
   const location = useLocation();
 

@@ -1,3 +1,4 @@
+import "../styles/PostDetail.css"
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import testImage from "../assets/forest-2-unsplash.jpg";

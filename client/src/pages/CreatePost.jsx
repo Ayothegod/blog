@@ -1,3 +1,4 @@
+import "../styles/CreatePost.css"
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { MdCancel } from "react-icons/md";
