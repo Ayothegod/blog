@@ -15,9 +15,10 @@ export default function HomePosts() {
           <p>@AdebisiAyomide</p>
           <p>18/11/23 10-45</p>
         </div>
-        <p className="post-details">
+        <p className="post-detail">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde reiciendis quam architecto, necessitatibus quidem libero quaerat labore debitis ad pariatur, eligendi corrupti, laborum eaque molestiae quae laudantium aut ut nihil.
         </p>
+
       </div>
     </div>
   )

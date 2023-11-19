@@ -7,6 +7,11 @@
 
 #root {
   --primary-gray: rgba(198, 200, 207, 0.627);
+  --font-small: 16px;
+  --font-medium: 18px;
+  --font-big: 24px;
+
+  --max-width: 720px;
 }
 
 li {
@@ -20,7 +25,7 @@ li {
   gap: 0.5rem 0.25rem;
   flex-wrap: wrap;
 
-  max-width: 720px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0.5rem;
 }
@@ -62,7 +67,7 @@ p {
 
 .search-box {
   border: 2px solid black;
-  padding:  6px;
+  padding: 6px;
   font-size: 18px;
   border-radius: 4px;
   width: 100%;
@@ -73,10 +78,8 @@ p {
 }
 
 .home {
-  margin: 2rem 0;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0.5rem;
+  max-width: var(--max-width);
+  margin: 2rem auto;
 }
 
 .post {
@@ -91,32 +94,33 @@ p {
 .post-content {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
+  gap: .5rem;
 }
 
 .post-content h2 {
   font-weight: 600;
-  font-size: 16px;
 }
 
 .post-content .post-tag {
   display: flex;
   justify-content: space-between;
+
 }
 
 .post-tag p {
   color: rgb(93, 88, 88);
-  font-size: 12px;
+  font-size: 16px;
 }
 
-.post-content .post-details {
+.post-content .post-detail {
   color: rgb(40, 37, 37);
   line-height: 1.5;
-  font-size: 14px;
+  font-size: var(--font-medium);
 }
 
 .post-image {
   width: 100%;
+  max-height: 40vh;
 }
 
 .textImage {
@@ -147,7 +151,6 @@ p {
 }
 
 @media screen and (min-width: 550px) {
-
   .header-search {
     width: auto;
   }
@@ -156,13 +159,14 @@ p {
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: center;
     flex-direction: row;
   }
 
   .post-content {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .post-content h2 {
@@ -170,19 +174,14 @@ p {
     font-size: 20px;
   }
 
-  .post-content .post-tag {
-    display: flex;
-    justify-content: space-between;
+  .post-image {
+    min-width: 30%;
+    max-height: 40vh;
   }
 
-  .post-tag p {
-    color: rgb(93, 88, 88);
-    font-size: 14px;
-  }
-
-  .post-content .post-details {
-    color: rgb(40, 37, 37);
-    line-height: 1.5;
+  .textImage {
+    height: 100%;
+    width: 100%;
   }
 
   /* FOOTER ============ */
@@ -192,7 +191,7 @@ p {
   }
 }
 
-@media screen and (min-width: 760px) {
+/* @media screen and (min-width: 760px) {
   .header-auth {
     gap: 1rem;
   }
@@ -221,4 +220,4 @@ p {
   .search-icon {
     font-size: 24px;
   }
-}
+} */
