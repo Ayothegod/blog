@@ -30,12 +30,12 @@ li {
   gap: 0.5rem;
 }
 
-.header-logo {
-  font-size: 20px;
-  font-weight: 500;
-}
-.auth {
-  font-weight: 400;
+.header-logo a {
+  font-size: 28px;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }
 
 p {
@@ -45,19 +45,27 @@ p {
 .auth a {
   text-decoration: none;
   color: black;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.auth a:hover {
+  border-bottom: 2px solid black;
 }
 
 .header-search {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  width: 100%;
 }
 
 .search-box {
   border: 2px solid black;
-  padding: 4px 10px;
+  padding:  6px;
+  font-size: 18px;
   border-radius: 4px;
+  width: 100%;
 }
 
 .search-icon {
@@ -138,9 +146,12 @@ p {
   margin-top: 2rem;
 }
 
-
-
 @media screen and (min-width: 550px) {
+
+  .header-search {
+    width: auto;
+  }
+
   .post {
     display: flex;
     gap: 1rem;

@@ -6,7 +6,9 @@ export default function Header() {
 
   return (
     <div className="header">
-      <h1 className="header-logo">Blog Market</h1>
+      <h1 className="header-logo">
+        <Link to="/">Blog Market</Link>
+      </h1>
 
       <div className="header-search">
         <CiSearch className="search-icon" />
