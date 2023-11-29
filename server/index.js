@@ -22,4 +22,5 @@ app.use("/api", createUser);
 startDb()
   .then(console.log("database is connected!"))
   .catch((e) => console.log(e));
+  
 app.listen(port, () => console.log(`server listening on port: ${port}`));
