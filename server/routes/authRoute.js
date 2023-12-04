@@ -13,6 +13,8 @@ const users = [
   },
 ];
 
+const refreshTokens = [];
+
 routes.post("/login", (req, res) => {
   try {
     const { username, password } = req.body;
@@ -21,32 +23,37 @@ routes.post("/login", (req, res) => {
       return res.status(401).send("wrong credentials");
     }
     // create jwt - sign jwt
-    const accessToken = generateAccess(username)
-    const refreshToken = generateRefresh(username)
+    const accessToken = generateAccess(username);
+    const refreshToken = generateRefresh(username);
 
-    res.status(200).json({ 
-        accessToken: accessToken,
-        refreshToken: refreshToken,
-     });
+    // save refreshToken to database incase of cross-checking
+    refreshTokens.push(refreshToken);
+
+    // send refresh token to frontend via cookies
+    res.cookie("jwt", refreshToken, {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+
+    // send access token to frontend via json
+    res.status(200).json({
+      accessToken: accessToken,
+    });
   } catch (error) {
     console.log(error);
   }
 });
 
 const generateAccess = (user) => {
-    return jwt.sign(
-        { username: user },
-        process.env.ACCESS_TOKEN,
-        { expiresIn: "30s" }
-      );
-}
+  return jwt.sign({ username: user }, process.env.ACCESS_TOKEN, {
+    expiresIn: "30s",
+  });
+};
 
 const generateRefresh = (user) => {
-    return jwt.sign(
-        { username: user },
-        process.env.REFRESH_TOKEN,
-        { expiresIn: "1d" }
-      );
-}
+  return jwt.sign({ username: user }, process.env.REFRESH_TOKEN, {
+    expiresIn: "1d",
+  });
+};
 
 module.exports = routes;

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const cookieParser = require("cookie-parser")
 require("dotenv").config()
 const app = express();
 
@@ -10,6 +11,9 @@ const { createUser } = require("./libs/db");
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+
+// middleaware for cookie parser
+app.use(cookieParser())
 
 
 app.get("/", (req, res) => {
