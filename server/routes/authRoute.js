@@ -1,19 +1,10 @@
 const express = require("express");
 const routes = express.Router();
 const jwt = require("jsonwebtoken");
+const { users } = require("../models/userInfo");
 
-const users = [
-  {
-    username: "Ayomide",
-    password: "Ayomide1234",
-  },
-  {
-    username: "Bishop",
-    password: "myBishop",
-  },
-];
 
-const refreshTokens = [];
+// const refreshTokens = [];
 
 routes.post("/login", (req, res) => {
   try {
@@ -22,12 +13,16 @@ routes.post("/login", (req, res) => {
     if (username !== users[0].username || password !== users[0].password) {
       return res.status(401).send("wrong credentials");
     }
-    // create jwt - sign jwt
-    const accessToken = generateAccess(username);
-    const refreshToken = generateRefresh(username);
 
-    // save refreshToken to database incase of cross-checking
-    refreshTokens.push(refreshToken);
+    // find user
+    const foundUser = users.find(user => user.username === username)
+
+    // create jwt - sign jwt
+    const accessToken = generateAccess(foundUser.username);
+    const refreshToken = generateRefresh(foundUser.username);
+
+    // save refreshToken to database with user for refreshToken route incase of cross-checking
+    // console.log(refresh);
 
     // send refresh token to frontend via cookies
     res.cookie("jwt", refreshToken, {
