@@ -1,8 +1,7 @@
 const express = require("express");
 const routes = express.Router();
 const jwt = require("jsonwebtoken");
-const { users } = require("../models/userInfo");
-
+const User = require("../models/User");
 
 // const refreshTokens = [];
 
@@ -15,7 +14,7 @@ routes.post("/login", (req, res) => {
     }
 
     // find user
-    const foundUser = users.find(user => user.username === username)
+    const foundUser = users.find((user) => user.username === username);
 
     // create jwt - sign jwt
     const accessToken = generateAccess(foundUser.username);
@@ -50,5 +49,20 @@ const generateRefresh = (user) => {
     expiresIn: "1d",
   });
 };
+
+routes.post("/register", async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+
+    const user = await User.create({
+      username,
+      email,
+      password,
+    });
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(400).json(error.message || error);
+  }
+});
 
 module.exports = routes;
