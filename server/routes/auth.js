@@ -3,8 +3,6 @@ const routes = express.Router();
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-// const refreshTokens = [];
-
 routes.post("/login", (req, res) => {
   try {
     const { username, password } = req.body;
