@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 const app = express();
 
-const authRoute = require("./routes/authRoute");
+const auth = require("./routes/auth");
 // const refreshRoute = require("./routes/refreshTokenRoute");
 // const postRoute = require("./routes/postRoute");
 
@@ -25,6 +25,6 @@ app.get("/", (req, res) => {
   res.status(200).send("hello backend coders");
 });
 
-app.use("/api/auth", authRoute)
+app.use("/api/auth", auth)
 
 app.listen(port, () => console.log(`server listening on port: ${port}`));
