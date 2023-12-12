@@ -15,16 +15,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const startDb = async () => {
-  await mongoose.connect(process.env.MONGO_URL);
+  try {
+    await mongoose.connect(process.env.MONGO_URL);
+    console.log("database is connected!")
+  } catch (error) {
+    console.log(error)
+  }
 };
 startDb()
-  .then(console.log("database is connected!"))
-  .catch((e) => console.log(e));
 
 app.get("/", (req, res) => {
   res.status(200).send("hello backend coders");
 });
 
-app.use("/api/auth", auth)
+app.use("/api/auth", auth);
 
 app.listen(port, () => console.log(`server listening on port: ${port}`));
